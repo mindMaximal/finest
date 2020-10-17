@@ -1,0 +1,4 @@
+@import "_mixins/font-face";
+
+@include font-face("arial", "../fonts/ArialRegular/ArialRegular");
+@include font-face("arial", "../fonts/ArialBold/ArialBold", bold);

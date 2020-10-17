@@ -1,0 +1,127 @@
+@import "vars";
+@import "fonts";
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+body {
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  font-family: $default-font;
+  overflow-x: hidden;
+  color: $text;
+  input, textarea {
+	border: #666 1px solid;
+	outline: none;
+	&:focus:required:invalid {
+	  border-color: red;
+	}
+	&:required:valid {
+	  border-color: green;
+	}
+  }
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  &.img-width {
+	width: 100%;
+  }
+}
+
+.text {
+
+  &--center {
+  	text-align: center;
+  }
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+//Container
+@media (max-width: 1400px) {
+  .container {
+	padding: 0 60px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .container {
+	padding: 0 30px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .container {
+	padding: 0 15px;
+  }
+}
+
+//Flex-box
+.flex {
+  display: flex;
+
+  &--wrap {
+	flex-wrap: wrap;
+  }
+
+  &--shrink {
+	flex-shrink: 0;
+  }
+
+  &--column {
+	flex-direction: column;
+  }
+
+  &--center {
+	justify-content: center;
+  }
+
+  &--space-between {
+	justify-content: space-between;
+  }
+
+  &--end {
+	justify-content: flex-end;
+  }
+
+  &--align {
+
+	&-center {
+	  align-items: center;
+	}
+
+	&-top {
+	  align-items: start;
+	}
+
+	&-stretch {
+	  align-items: stretch;
+	}
+
+	&-start {
+	  align-items: flex-start;
+	}
+
+	&-end {
+	  align-items: flex-end;
+	}
+
+	&-stretch {
+	  align-items: stretch;
+	}
+  }
+}
