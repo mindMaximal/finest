@@ -9,6 +9,7 @@
 	"author": "Evgeniy Volkov",
 	"license": "ISC",
 	"devDependencies": {
+		"@glidejs/glide": "^3.4.1",
 		"browser-sync": "^2.26.7",
 		"del": "^5.1.0",
 		"gulp": "^4.0.2",

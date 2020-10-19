@@ -3,3 +3,194 @@
 @import "libs";
 @import "settings";
 
+.home {
+	height: 70vh;
+	min-height: 700px;
+	margin-top: 130px;
+
+	&__info {
+		width: 50%;
+	}
+
+	&__image {
+		width: 50%;
+		text-align: right;
+		padding-left: 50px;
+
+		img {
+			width: 100%;
+			max-width: 450px;
+		}
+	}
+
+	&__title {
+		font-size: 48px;
+		line-height: 55px;
+		max-width: 580px;
+		margin: 40px 0;
+	}
+
+	&__text {
+		margin: 30px 0;
+		max-width: 580px;
+		font-size: 18px;
+		line-height: 24px;
+	}
+
+	&__links {
+		margin-top: 60px;
+	}
+
+	&__link {
+		margin-right: 25px;
+		margin-bottom: 20px;
+
+		&:last-of-type {
+			margin-right: 0;
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+@include media-breakpoint-down(md) {
+	.home {
+		margin-top: 0px;
+		min-height: 0;
+		height: auto;
+
+		&__info {
+			width: 100%;
+		}
+
+		&__image {
+			display: none;
+		}
+
+		&__title {
+			margin: 0 0 30px 0;
+			font-size: 40px;
+			line-height: 46px;
+			max-width: 460px;
+		}
+
+		&__text {
+			max-width: 460px;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.home {
+
+		&__title {
+			font-size: 28px;
+			line-height: 32px;
+			margin: 0 0 30px 0;
+		}
+
+		&__text {
+			font-size: 16px;
+			margin: 15px 0;
+		}
+
+		&__links {
+			margin-top: 40px;
+		}
+
+		&__link {
+			margin-right: 0;
+		}
+	}
+}
+
+.about {
+
+	&__wrapper {
+		margin-top: 100px;
+	}
+
+	&__item {
+		width: 25%;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.about {
+
+		&__wrapper {
+			justify-content: center;
+		}
+
+		&__item {
+			width: 40%;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.about {
+
+		&__wrapper {
+			margin-top: 70px;
+		}
+
+		&__item {
+			width: 100%;
+			margin: 0 auto 50px auto;
+		}
+	}
+}
+
+.trait {
+
+	&__title {
+		font-size: 20px;
+		color: $btn;
+		display: block;
+		margin: 0;
+		max-width: 280px;
+		line-height: 21px;
+	}
+
+	&__icon {
+		margin-right: 20px;
+		width: 48px;
+	}
+
+	&__text {
+		max-width: 260px;
+		font-size: 16px;
+		line-height: 24px;
+		margin: 20px 0 0 0;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.trait {
+		max-width: 320px;
+
+		&__text {
+			max-width: 320px;
+		}
+
+		&__title {
+			font-size: 18px;
+			line-height: 20px;
+		}
+	}
+}
+
+
+/*
+
+@include media-breakpoint-down(md) {
+
+}
+
+@include media-breakpoint-down(sm) {
+
+}
+
+ */
