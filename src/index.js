@@ -1,3 +1,5 @@
+import './scss/main.scss'
+
 document.addEventListener('DOMContentLoaded', function(){
     //Прилипающий header при скроле
     if (document.querySelector('.header')) {

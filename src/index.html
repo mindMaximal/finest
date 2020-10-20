@@ -20,9 +20,6 @@
 	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#0043e0">
 	<meta name="theme-color" content="#ffffff">
-
-	<link rel="stylesheet" href="css/main.min.css">
-
 </head>
 
 <body>
@@ -38,8 +35,8 @@
 
 				<div class="logo header__logo">
 					<a href="/" class="logo__link">
-					<object type="image/svg+xml" data="img/logo.svg">
-						<img src="img/logo.png" alt="Logo">
+					<object type="image/svg+xml" data="<%=require('@img/logo.svg')%>">
+						<img src="<%=require('@img/logo.png')%>" alt="Logo">
 					</object>
 					</a>
 				</div>
@@ -110,7 +107,7 @@
 
 				<div class="home__image">
 
-					<img src="img/home/photo.png" alt="Photo">
+					<img  src="<%=require('@img/home/photo.png')%>" alt="Photo">
 
 				</div>
 
@@ -138,7 +135,7 @@
 
 					<div class="trait__wrapper flex flex--start flex--align-center">
 						<div class="trait__icon">
-							<img src="img/about/1.svg" class="img img-width" alt="Icon">
+							<img src="<%=require('@img/about/1.svg')%>" class="img img-width" alt="Icon">
 						</div>
 						<h6 class="trait__title">Надежность и <br> качество</h6>
 					</div>
@@ -153,7 +150,7 @@
 
 					<div class="trait__wrapper flex flex--start flex--align-center">
 						<div class="trait__icon">
-							<img src="img/about/2.svg" class="img img-width" alt="Icon">
+							<img src="<%=require('@img/about/2.svg')%>"  class="img img-width" alt="Icon">
 						</div>
 						<h6 class="trait__title">Комплексное<br>обслуживание</h6>
 					</div>
@@ -168,7 +165,7 @@
 
 					<div class="trait__wrapper flex flex--start flex--align-center">
 						<div class="trait__icon">
-							<img src="img/about/3.svg" class="img img-width" alt="Icon">
+							<img src="<%=require('@img/about/3.svg')%>" class="img img-width" alt="Icon">
 						</div>
 						<h6 class="trait__title">На связи<br>с вами</h6>
 					</div>
@@ -178,12 +175,11 @@
 					</div>
 
 				</div>
-
 				<div class="trait about__item">
 
 					<div class="trait__wrapper flex flex--start flex--align-center">
 						<div class="trait__icon">
-							<img src="img/about/4.svg" class="img img-width" alt="Icon">
+							<img src="<%=require('@img/about/4.svg')%>" class="img img-width" alt="Icon">
 						</div>
 						<h6 class="trait__title">Лучшие<br>специалисты</h6>
 					</div>
@@ -229,8 +225,6 @@
 		</div>
 
 	</section>
-
-	<script src="js/scripts.min.js"></script>
 
 </body>
 </html>
