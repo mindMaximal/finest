@@ -13,11 +13,11 @@
 
 	<meta property="og:image" content="path/to/image.jpg">
 
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-	<link rel="manifest" href="img/favicon/site.webmanifest">
-	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="./img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#0043e0">
 	<meta name="theme-color" content="#ffffff">
 </head>
@@ -32,21 +32,19 @@
 
 		<div class="container flex flex--space-between flex--align-center">
 
-
 				<div class="logo header__logo">
 					<a href="/" class="logo__link">
-					<object type="image/svg+xml" data="<%=require('@img/logo.svg')%>">
-						<img src="<%=require('@img/logo.png')%>" alt="Logo">
+					<object type="image/svg+xml" data="img/logo.svg">
+						<img src="img/logo.png" alt="Logo">
 					</object>
 					</a>
 				</div>
-
 
 			<div class="header__wrapper flex flex--end flex--align-center">
 
 				<nav class="nav header__nav">
 					<ul class="header__list flex flex--align-center">
-						<li class="header__elem"><a href="#" class="header__link">О нас</a></li>
+						<li class="header__elem"><a href="#about--anchor" class="header__link">О нас</a></li>
 						<li class="header__elem"><a href="" class="header__link">Блог</a></li>
 						<li class="header__elem"><a href="" class="header__link">Тарифы</a></li>
 						<li class="header__elem"><a href="" class="header__link">Контакты</a></li>
@@ -107,7 +105,7 @@
 
 				<div class="home__image">
 
-					<img  src="<%=require('@img/home/photo.png')%>" alt="Photo">
+					<img  src="./img/home/photo.png" alt="Photo">
 
 				</div>
 
@@ -135,7 +133,7 @@
 
 					<div class="trait__wrapper flex flex--start flex--align-center">
 						<div class="trait__icon">
-							<img src="<%=require('@img/about/1.svg')%>" class="img img-width" alt="Icon">
+							<img src="./img/about/1.svg" class="img img-width" alt="Icon">
 						</div>
 						<h6 class="trait__title">Надежность и <br> качество</h6>
 					</div>
@@ -150,7 +148,7 @@
 
 					<div class="trait__wrapper flex flex--start flex--align-center">
 						<div class="trait__icon">
-							<img src="<%=require('@img/about/2.svg')%>"  class="img img-width" alt="Icon">
+							<img src="./img/about/2.svg"  class="img img-width" alt="Icon">
 						</div>
 						<h6 class="trait__title">Комплексное<br>обслуживание</h6>
 					</div>
@@ -165,7 +163,7 @@
 
 					<div class="trait__wrapper flex flex--start flex--align-center">
 						<div class="trait__icon">
-							<img src="<%=require('@img/about/3.svg')%>" class="img img-width" alt="Icon">
+							<img src="./img/about/3.svg" class="img img-width" alt="Icon">
 						</div>
 						<h6 class="trait__title">На связи<br>с вами</h6>
 					</div>
@@ -175,11 +173,12 @@
 					</div>
 
 				</div>
+
 				<div class="trait about__item">
 
 					<div class="trait__wrapper flex flex--start flex--align-center">
 						<div class="trait__icon">
-							<img src="<%=require('@img/about/4.svg')%>" class="img img-width" alt="Icon">
+							<img src="./img/about/4.svg" class="img img-width" alt="Icon">
 						</div>
 						<h6 class="trait__title">Лучшие<br>специалисты</h6>
 					</div>
@@ -200,23 +199,847 @@
 
 		<div class="container">
 
-			<h1 class="title services__title">
+			<h2 class="title services__title">
 				Наши услуги
-			</h1>
+			</h2>
 
-			<div class="services__wrapper">
+			<div class="services__wrapper flex flex--space-between">
 
 				<div class="services__info">
 
-					<p class="serivces__text">
-						Мы предоставляем бухгалтерские услуги и закрываем любые потребности вашей компании.
+					<p class="services__text">
+						Мы предоставляем бухгалтерские услуги и закрываем любые потребности вашей компании
 					</p>
 
-					<p class="serivces__text">
+					<p class="services__text">
 						Проанализировав вашу ситуацию дадим рекомендации, проконсультируем по вопросам обновления законодательства, предложим варианты решения ваших проблем
 					</p>
 
+					<div class="services__arrows arrows">
 
+						<button class="services__arrow services__arrow--prev arrows__arrow arrows__arrow--prev">
+							<img src="img/icons/arrow-left.svg" alt="Arrow">
+						</button>
+
+						<button class="services__arrow services__arrow--next arrows__arrow arrows__arrow--next">
+							<img src="img/icons/arrow-right.svg" alt="Arrow">
+						</button>
+
+					</div>
+
+				</div>
+
+				<div class="services__interactive">
+
+					<div class="services__slider slider glide">
+
+						<div class="glide__track" data-glide-el="track">
+
+							<div class="glide__slides">
+
+								<div class="services__slide glide__slide slide">
+
+									<div class="service services__item">
+
+										<div>
+											<div class="service__title">Бухгалтерское сопровождение</div>
+
+											<div class="service__text">Ведение учета, составление и сдача отчетности, расчет зарплаты</div>
+										</div>
+
+										<div class="service__links">
+											<a href="#" class="link link--background home__link">
+												Подробнее
+											</a>
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="services__slide glide__slide slide">
+
+									<div class="service services__item">
+
+										<div>
+											<div class="service__title">Консалтинг</div>
+
+											<div class="service__text">
+												Консультации по налоговым, финансовым и бухгалтерским вопросам
+											</div>
+										</div>
+
+										<div class="service__links">
+											<a href="#" class="link link--background home__link">
+												Подробнее
+											</a>
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="services__slide glide__slide slide">
+
+									<div class="service services__item">
+
+										<div>
+											<div class="service__title">
+												Кадровое делопроизводство
+											</div>
+
+											<div class="service__text">
+												Расчет зарплаты, отчетность по сотрудникам, подготовка документов на прием, увольнение, отпуск
+											</div>
+										</div>
+
+										<div class="service__links">
+											<a href="#" class="link link--background home__link">
+												Подробнее
+											</a>
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="services__slide glide__slide slide">
+
+									<div class="service services__item">
+
+										<div>
+											<div class="service__title">Бухгалтерское сопровождение</div>
+
+											<div class="service__text">Ведение учета, составление и сдача отчетности, расчет зарплаты</div>
+										</div>
+
+										<div class="service__links">
+											<a href="#" class="link link--background home__link">
+												Подробнее
+											</a>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="offer">
+
+		<div class="container">
+
+			<div class="offer__wrapper">
+
+				<h3 class="offer__title">
+					Зарегистрируйте ИП и ООО совершенно бесплатно!
+				</h3>
+
+				<div class="offer__text">
+					Вы можете зарегистрировать ИП и ООО у нас и получить консультацию о подходящей системе налогооблажения у нас бесплатно. Вы сможете выбрать наиболее привлекательный банк-партнер для открытия счета, получив выгодные условия
+				</div>
+
+				<div class="offer__links">
+					<a href="#" class="offer__link link link--bordered link--white-border">
+						Связаться с нами
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="work">
+
+		<div class="container">
+
+			<h2 class="title work__title text--center">
+				Как мы работаем?
+			</h2>
+
+			<p class="subtitle work__subtitle text--center">
+				Качество оказываемых нами услуг всегда на высоте
+			</p>
+
+			<div class="work__wrapper flex flex--wrap flex--space-between">
+
+				<div class="work-step work__item">
+
+					<div class="work-step__num">
+						1
+					</div>
+
+					<div class="work-step__title">
+						Вы оставляете заявку
+					</div>
+
+					<div class="work-step__content">
+						<p>
+							Оставьте заявку на сайте или <a href="#" class="call">позвоните нам</a> и мы проанализируем ситуацию, ответим на ваши вопросы и договоримся о встрече
+						</p>
+
+						<div class="work-step__links">
+							<a href="#" class="link link--background">Оставить заявку</a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="work-step work__item">
+
+					<div class="work-step__num">
+						2
+					</div>
+
+					<div class="work-step__title">
+						Мы проводем консультацию
+					</div>
+
+					<div class="work-step__content">
+						<p>
+							Уточнив все обстоятельства вашей ситуации, мы сможем подобрать оптимальное решение для вас, которое <span class="color--blue">сэкономит вам время и деньги</span>. Расскажем об изменениях в законодательстве вашей сферы
+						</p>
+					</div>
+
+				</div>
+
+				<div class="work-step work__item">
+
+					<div class="work-step__num">
+						3
+					</div>
+
+					<div class="work-step__title">
+						Оформляем документы и договор
+					</div>
+
+					<div class="work-step__content">
+						<p>
+							Заключаем договор на оказание услуг, предоставляем вам список необходимых для работы документов
+						</p>
+
+						<div class="work-step__links">
+							<a href="#" class="link link--background">Наши услуги</a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="work-step work__item">
+
+					<div class="work-step__num">
+						4
+					</div>
+
+					<div class="work-step__title">
+						Приступаем к работе
+					</div>
+
+					<div class="work-step__content">
+						<p>
+							Наши специалисты приступают к работе, сообщая вам результаты и необходимую информацию. Вас оповестят о необходимости посетить офис, изменениях в законодательстве и выгодных возможностях
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="partners">
+
+		<div class="container">
+
+			<div class="partners__wrapper flex flex--space-between flex--align-center">
+
+				<div>
+
+					<h2 class="title partners__title">
+						Партнеры
+					</h2>
+
+					<p class="subtitle">
+						Компании, с которыми нас связывают теплые отношения
+					</p>
+
+				</div>
+
+				<div class="partners__arrows arrows">
+
+					<button class="partners__arrow partners__arrow--prev arrows__arrow arrows__arrow--prev">
+						<img src="img/icons/arrow-left.svg" alt="Arrow">
+					</button>
+
+					<button class="partners__arrow partners__arrow--next arrows__arrow arrows__arrow--next">
+						<img src="img/icons/arrow-right.svg" alt="Arrow">
+					</button>
+
+				</div>
+
+			</div>
+
+			<div class="partners__slider slider glide">
+
+				<div class="glide__track" data-glide-el="track">
+
+					<div class="partners__slides glide__slides flex--align-center">
+
+						<div class="partners__slide glide__slide">
+							<object
+											type="image/svg+xml"
+											data="./img/partners/sber.svg">
+								<img src="./img/partners/sber.png" alt="Сбербанк">
+							</object>
+						</div>
+
+						<div class="partners__slide glide__slide">
+							<object
+											type="image/svg+xml"
+											data="./img/partners/vtb.svg">
+								<img src="./img/partners/vtb.png" alt="Втб">
+							</object>
+						</div>
+
+						<div class="partners__slide glide__slide">
+							<object
+											type="image/svg+xml"
+											data="./img/partners/alfa.svg">
+								<img src="./img/partners/alfa.png" alt="Альфа-банк">
+							</object>
+						</div>
+
+						<div class="partners__slide glide__slide">
+							<object
+											type="image/svg+xml"
+											data="./img/partners/tinkoff.svg">
+								<img src="./img/partners/tinkoff.png" alt="Тинькоф">
+							</object>
+						</div>
+
+						<div class="partners__slide glide__slide">
+							<object
+											type="image/svg+xml"
+											data="./img/partners/alfa.svg">
+								<img src="./img/partners/alfa.png" alt="Альфа-банк">
+							</object>
+						</div>
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="partners__links text--center">
+				<a href="" class="link link--background">Открыть счет</a>
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="feedback feedback--blue">
+
+		<div class="container">
+
+			<h2 class="title feedback__title text--center">
+				Отзывы наших клиентов
+			</h2>
+
+			<p class="subtitle text--center">
+				Передавая нам на аутсорсинг часть своих задач, вы получаете выгоду
+			</p>
+
+		</div>
+
+		<div class="feedback__wrapper">
+
+			<div class="feedback__slider slider glide">
+
+				<div class="glide__track" data-glide-el="track">
+
+					<div class="feedback__slides glide__slides">
+
+						<div class="feedback__slide glide__slide">
+
+							<div class="review feedback__item">
+
+								<div class="review__photo">
+									<!--<img src="" alt="">-->
+								</div>
+
+								<div class="review__wrapper">
+
+									<div class="review__name">
+										Петров Александ Борисович
+									</div>
+
+									<div class="review__company">
+										ООО “Осирис”
+									</div>
+
+									<div class="review__text">
+										Мы выражаем свою благодарность компании Finest за качественно оказанные услуги и возможность передать сложные задачи на аутсортсинг
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="feedback__slide glide__slide">
+
+							<div class="review feedback__item">
+
+								<div class="review__photo">
+									<!--<img src="" alt="">-->
+								</div>
+
+								<div class="review__wrapper">
+
+									<div class="review__name">
+										Петров Александ Борисович
+									</div>
+
+									<div class="review__company">
+										ООО “Осирис”
+									</div>
+
+									<div class="review__text">
+										Мы выражаем свою благодарность компании Finest за качественно оказанные услуги и возможность передать сложные задачи на аутсортсинг
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="feedback__slide glide__slide">
+
+							<div class="review feedback__item">
+
+								<div class="review__photo">
+									<!--<img src="" alt="">-->
+								</div>
+
+								<div class="review__wrapper">
+
+									<div class="review__name">
+										Петров Александ Борисович
+									</div>
+
+									<div class="review__company">
+										ООО “Осирис”
+									</div>
+
+									<div class="review__text">
+										Мы выражаем свою благодарность компании Finest за качественно оказанные услуги и возможность передать сложные задачи на аутсортсинг
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="feedback__slide glide__slide">
+
+							<div class="review feedback__item">
+
+								<div class="review__photo">
+									<!--<img src="" alt="">-->
+								</div>
+
+								<div class="review__wrapper">
+
+									<div class="review__name">
+										Петров Александ Борисович
+									</div>
+
+									<div class="review__company">
+										ООО “Осирис”
+									</div>
+
+									<div class="review__text">
+										Мы выражаем свою благодарность компании Finest за качественно оказанные услуги и возможность передать сложные задачи на аутсортсинг
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="feedback__bullets glide__bullets" data-glide-el="controls[nav]"></div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="faq">
+
+		<div class="container">
+
+			<h2 class="title faq__title">
+				Часто задаваемые вопросы
+			</h2>
+
+			<div class="faq__wrapper flex flex--space-between">
+
+				<div class="accordion faq__accordion">
+
+					<div class="accordion__item">
+
+						<div class="accordion__info">
+
+							<h5 class="accordion__title">
+								Как открыть ИП или ООО?
+							</h5>
+
+							<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8.5" y1="2.18557e-08" x2="8.5" y2="17" stroke="#0043E0"/><line x1="17" y1="8.5" x2="-4.37114e-08" y2="8.5" stroke="#0043E0"/></svg>
+
+						</div>
+
+						<div class="accordion__content">
+							<div class="accordion__inner">
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa, eius et iste libero, molestias nulla numquam omnis qui temporibus ullam voluptatum. Alias aliquid architecto aspernatur, assumenda beatae blanditiis corporis deserunt distinctio, dolor dolore ea earum eum ex facere fuga ipsum magni nisi nobis non numquam odio quaerat quas qui quisquam ratione recusandae repellat, rerum sed sequi soluta tenetur vel veniam voluptate. Accusamus asperiores at, blanditiis corporis dignissimos dolore doloremque, ducimus, et explicabo molestiae nesciunt nisi nobis omnis placeat quae quisquam soluta tempora! Animi consequatur debitis eius error fugiat, nihil, perferendis quidem reiciendis repellendus reprehenderit sapiente, tempore totam voluptatem voluptates!</p>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores dignissimos harum laboriosam numquam praesentium. Adipisci consectetur culpa fugit iusto nihil ratione soluta tempora voluptates. Amet atque consequuntur facilis fuga ipsa minima modi nam nisi quidem recusandae! Error, mollitia, voluptatum.</p>
+
+							</div>
+						</div>
+
+					</div>
+
+					<div class="accordion__item">
+
+						<div class="accordion__info">
+
+							<h5 class="accordion__title">
+								Как мне встать к вам на обслуживание?
+							</h5>
+
+							<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8.5" y1="2.18557e-08" x2="8.5" y2="17" stroke="#0043E0"/><line x1="17" y1="8.5" x2="-4.37114e-08" y2="8.5" stroke="#0043E0"/></svg>
+
+						</div>
+
+						<div class="accordion__content">
+							<div class="accordion__inner">
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa, eius et iste libero, molestias nulla numquam omnis qui temporibus ullam voluptatum. Alias aliquid architecto aspernatur, assumenda beatae blanditiis corporis deserunt distinctio, dolor dolore ea earum eum ex facere fuga ipsum magni nisi nobis non numquam odio quaerat quas qui quisquam ratione recusandae repellat, rerum sed sequi soluta tenetur vel veniam voluptate. Accusamus asperiores at, blanditiis corporis dignissimos dolore doloremque, ducimus, et explicabo molestiae nesciunt nisi nobis omnis placeat quae quisquam soluta tempora! Animi consequatur debitis eius error fugiat, nihil, perferendis quidem reiciendis repellendus reprehenderit sapiente, tempore totam voluptatem voluptates!</p>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores dignissimos harum laboriosam numquam praesentium. Adipisci consectetur culpa fugit iusto nihil ratione soluta tempora voluptates. Amet atque consequuntur facilis fuga ipsa minima modi nam nisi quidem recusandae! Error, mollitia, voluptatum.</p>
+
+							</div>
+						</div>
+
+					</div>
+
+					<div class="accordion__item">
+
+						<div class="accordion__info">
+
+							<h5 class="accordion__title">
+								Как получить консультацию со специалистом?
+							</h5>
+
+							<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8.5" y1="2.18557e-08" x2="8.5" y2="17" stroke="#0043E0"/><line x1="17" y1="8.5" x2="-4.37114e-08" y2="8.5" stroke="#0043E0"/></svg>
+
+						</div>
+
+						<div class="accordion__content">
+							<div class="accordion__inner">
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa, eius et iste libero, molestias nulla numquam omnis qui temporibus ullam voluptatum. Alias aliquid architecto aspernatur, assumenda beatae blanditiis corporis deserunt distinctio, dolor dolore ea earum eum ex facere fuga ipsum magni nisi nobis non numquam odio quaerat quas qui quisquam ratione recusandae repellat, rerum sed sequi soluta tenetur vel veniam voluptate. Accusamus asperiores at, blanditiis corporis dignissimos dolore doloremque, ducimus, et explicabo molestiae nesciunt nisi nobis omnis placeat quae quisquam soluta tempora! Animi consequatur debitis eius error fugiat, nihil, perferendis quidem reiciendis repellendus reprehenderit sapiente, tempore totam voluptatem voluptates!</p>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores dignissimos harum laboriosam numquam praesentium. Adipisci consectetur culpa fugit iusto nihil ratione soluta tempora voluptates. Amet atque consequuntur facilis fuga ipsa minima modi nam nisi quidem recusandae! Error, mollitia, voluptatum.</p>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="faq__info">
+
+					<p>
+						Не нашли ответы на интересующие вас вопросы? <a href="#" class="call">Оставьте заявку</a> или позвоните нам
+					</p>
+
+					<p>
+						Проанализировав вашу ситуацию дадим рекомендации, проконсультируем по вопросам обновления законодательства, предложим варианты решения ваших проблем
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="price">
+
+		<div class="container">
+
+			<h2 class="title price__title text--center">
+				Тарифы и услуги
+			</h2>
+
+			<p class="subtitle text--center">
+				Мы решаем разнообразные задачи по бухгалтерии, налогам
+				и консалтингу - на нас можно положиться!
+			</p>
+
+			<div class="tabs price__tabs">
+
+				<div class="tabs__nav">
+
+					<ul class="tabs__list">
+
+						<li class="tabs__elem">
+							<button class="tabs__button tabs__button--open">
+								Юридические лица
+							</button>
+						</li>
+
+						<li class="tabs__elem">
+							<button class="tabs__button">
+								Физические лица
+							</button>
+						</li>
+
+						<li class="tabs__elem">
+							<button class="tabs__button">
+								ИП
+							</button>
+						</li>
+
+					</ul>
+
+				</div>
+
+				<div class="tabs__wrapper">
+
+					<div class="tabs__item tabs__item--open">
+
+						<h3 class="price__subtitle">
+							Обслуживание
+						</h3>
+
+						<p class="price__text">
+							Окончательная стоимость абоненского обслуживания не является фиксированной и корректируется от особенностей специфики и вида деятельности заказчика
+						</p>
+
+						<div class="price__block price__packages">
+
+							<div class="price__package package">
+
+								<div class="package__name">
+									<span>
+										Пакет услуг
+									</span>
+									<h6>Стандарт</h6>
+								</div>
+
+								<div class="package__conditions">
+
+									<span class="package__elem">
+										Все налоговые режимы
+									</span>
+
+									<span class="package__elem">Подготовка платежек по налогам и зарплате</span>
+
+									<span class="package__elem">Расчет процентов по договорам займа</span>
+
+									<span class="package__elem">Декларации, передаваемые в территориальные органы ФНС</span>
+
+									<span class="package__elem">Отчеты, передаваемые в  территориальные органы ПФР и ФСС</span>
+
+									<span class="package__elem">Сверка по налогам и контроль корректности отражения налоговых платежей</span>
+
+									<span class="package__elem">Оформление приема на работу граждан РФ</span>
+
+									<span class="package__elem">Количество сотрудников на окладе (не более): <span class="color--blue font--bold">4</span></span>
+
+									<span class="package__elem">Разъяснения законодательства в пределах <span class="color--blue font--bold">2 часов</span> в месяц</span>
+
+								</div>
+
+								<div class="package__price">
+									<span>Абоненская плата в месяц:</span>
+									<div>
+										5 900 ₽
+									</div>
+								</div>
+
+								<div class="package__links">
+									<a href="#" class="link link--background">Оставить заявку</a>
+								</div>
+
+							</div>
+
+							<div class="price__package package package--blue">
+
+								<div class="package__name">
+									<span>
+										Пакет услуг
+									</span>
+									<h6>Расширенный</h6>
+								</div>
+
+								<div class="package__conditions">
+
+									<span class="package__elem">
+										Все налоговые режимы
+									</span>
+
+									<span class="package__elem">Подготовка платежек по налогам и зарплате</span>
+
+									<span class="package__elem">Расчет процентов по договорам займа</span>
+
+									<span class="package__elem">Декларации, передаваемые в территориальные органы ФНС</span>
+
+									<span class="package__elem">Отчеты, передаваемые в  территориальные органы ПФР и ФСС</span>
+
+									<span class="package__elem">Сверка по налогам и контроль корректности отражения налоговых платежей</span>
+
+									<span class="package__elem">Оформление приема на работу граждан РФ</span>
+
+									<span class="package__elem">Количество сотрудников на окладе (не более): <span class="color--white font--bold">12</span></span>
+
+									<span class="package__elem">Разъяснения законодательства в пределах  в месяц</span>
+
+									<span class="package__elem">Изготовление счетов на оплату, входящих / исходящих Актов, УПД и счетов-фактур на услуги (в формате PDF, DOC, XLS)</span>
+
+									<span class="package__elem">Обработка входящих Актов, Накладных, Счетов-фактур <span class="color--white font--bold">20 сделок</span></span>
+
+									<span class="package__elem">Общее количество проводок (не более) <span class="color--white font--bold">150</span></span>
+
+								</div>
+
+								<div class="package__price">
+									<span>Абоненская плата в месяц:</span>
+									<div>
+										8 900 ₽
+									</div>
+								</div>
+
+								<div class="package__links">
+									<a href="#" class="link link--background link--background-white">Оставить заявку</a>
+								</div>
+
+							</div>
+
+							<div class="price__package package">
+
+								<div class="package__name">
+									<span>
+										Пакет услуг
+									</span>
+									<h6>Максимальный</h6>
+								</div>
+
+								<div class="package__conditions">
+
+									<span class="package__elem">
+										Все налоговые режимы
+									</span>
+
+									<span class="package__elem">Подготовка платежек по налогам и зарплате</span>
+
+									<span class="package__elem">Расчет процентов по договорам займа</span>
+
+									<span class="package__elem">Декларации, передаваемые в территориальные органы ФНС</span>
+
+									<span class="package__elem">Отчеты, передаваемые в  территориальные органы ПФР и ФСС</span>
+
+									<span class="package__elem">Сверка по налогам и контроль корректности отражения налоговых платежей</span>
+
+									<span class="package__elem">Оформление приема на работу граждан РФ</span>
+
+									<span class="package__elem">Количество сотрудников на окладе (не более): <span class="color--blue font--bold">4</span></span>
+
+									<span class="package__elem">Разъяснения законодательства в пределах <span class="color--blue font--bold">2 часов</span> в месяц</span>
+
+									<span class="package__elem">Изготовление счетов на оплату, входящих / исходящих Актов, УПД и счетов-фактур на услуги (в формате PDF, DOC, XLS)</span>
+
+									<span class="package__elem">Обработка входящих Актов, Накладных, Счетов-фактур <span class="color--blue font--bold">30 сделок</span></span>
+
+									<span class="package__elem">Общее количество проводок (не более) <span class="color--blue font--bold">300</span></span>
+
+									<span class="package__elem">Разъяснение сумм и иных данных, указанных в декларациях и бухгалтерских отчетах</span>
+
+								</div>
+
+								<div class="package__price">
+									<span>Абоненская плата в месяц:</span>
+									<div>
+										12 900 ₽
+									</div>
+								</div>
+
+								<div class="package__links">
+									<a href="#" class="link link--background">Оставить заявку</a>
+								</div>
+
+							</div>
+
+						</div>
+
+						<h3 class="price__subtitle">
+							Услуги
+						</h3>
+
+						<p class="price__text">
+							Кроме представленных ниже, мы можем оказать дополнительные услуги, для уточнения информации <a href="#" class="call">свяжитесь с нами</a>
+						</p>
+
+						<div class="price__block price__services">
+
+							<div class="price__service">
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="tabs__item">
+						2
+					</div>
+
+					<div class="tabs__item">
+						3
+					</div>
 
 				</div>
 

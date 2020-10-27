@@ -5,6 +5,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
+const Autoprefixer = require('autoprefixer')
+const webpack = require("webpack");
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -37,10 +40,11 @@ const cssLoaders = extra => {
                 name: "[name].[ext]",
                 outputPath: "css/",
                 hmr: isDev,
-                reloadAll: true
+                reloadAll: true,
             },
         },
-        'css-loader'
+        'css-loader',
+        'postcss-loader'
     ]
 
     if (extra) {
@@ -75,7 +79,9 @@ const jsLoaders = () => {
     }]
 
     if (isDev) {
-        loaders.push('eslint-loader')
+        loaders.push({
+            loader: 'eslint-loader'
+        })
     }
 
     return loaders
@@ -90,21 +96,35 @@ const plugins = () => {
             }
         }),
         new CleanWebpackPlugin(),
-  /*      new CopyWebpackPlugin(
+        new CopyWebpackPlugin(
             [
                 {
-                    from: path.resolve(__dirname, 'src/img'),
-                    to: path.resolve(__dirname, 'dist/img')
+                    from: path.resolve(__dirname, 'src/.htaccess'),
+                    to: path.resolve(__dirname, 'dist/')
+                },
+                {
+                    from: path.resolve(__dirname, 'src/img/favicon'),
+                    to: path.resolve(__dirname, 'dist/img/favicon')
                 }
             ]
-        ),*/
+        ),
         new MiniCssExtractPlugin({
             filename: filename('css')
-        })
+        }),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: [
+                    Autoprefixer()
+                ]
+            }
+        }),
     ]
 
     if (isProd) {
         base.push(new BundleAnalyzerPlugin())
+        base.push(new ImageminPlugin({
+            test: /\.(png|jpg|gif|ico|svg)$/
+        }))
     }
 
     return base
@@ -121,10 +141,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js', '.json', '.png', '.svg'],
+        extensions: ['.js', '.json', '.png', '.svg', ],
         alias: {
             '@img': path.resolve(__dirname, 'src/img'),
-            '@': path.resolve(__dirname, 'src'),
+            '@': path.resolve(__dirname, 'src/img'),
         }
     },
     optimization: optimization(),
@@ -136,6 +156,10 @@ module.exports = {
     plugins: plugins(),
     module: {
         rules: [
+            {
+                test: /\.html$/,
+                use: 'html-loader'
+            },
             {
                 test: /\.css$/,
                 use: cssLoaders()
@@ -149,8 +173,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: "[name].[ext]",
-                        outputPath: "img/",
+                        name: "[path][name].[ext]",
                         esModule: false
                     }
                 }]
@@ -160,8 +183,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: "[name].[ext]",
-                        outputPath: "font/",
+                        name: "[path][name].[ext]",
                     }
                 }]
             },

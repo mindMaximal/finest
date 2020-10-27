@@ -6,8 +6,8 @@
 }
 
 ::selection {
-  background-color: $accent;
-  color: #fff;
+  background-color: $text;
+  color: $white;
 }
 
 body {
@@ -51,12 +51,48 @@ body {
   }
 }
 
+.font {
+
+	&--bold {
+		font-weight: bold;
+	}
+}
+
+.color {
+
+	&--white {
+		color: $white;
+	}
+
+	&--blue {
+		color: $btn;
+	}
+}
+
 b, strong {
   font-weight: bold;
 }
 
 section {
-	padding: 50px 0;
+	padding: 75px 0;
+	width: 100%;
+}
+
+@include media-breakpoint-down(md) {
+	section {
+		padding: 50px 0;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	section {
+		padding: 25px 0;
+	}
+}
+
+object{
+	pointer-events: none;
+	outline: none;
 }
 
 @include media-breakpoint-down(sm) {
@@ -155,13 +191,13 @@ section {
 		border: 1px solid $btn;
 		border-radius: 62px;
 		padding: 15px 45px;
-		box-shadow: 0 10px 40px rgba(0, 67, 224, 0);
+		box-shadow: 0 10px 40px rgba($btn, 0);
 
 		&:hover,
 		&:focus {
 			background-color: $btn;
 			color: $white;
-			box-shadow: 0 10px 40px rgba(0, 67, 224, 0.3);
+			box-shadow: 0 10px 40px rgba($btn, 0.3);
 		}
 	}
 }
@@ -181,7 +217,7 @@ section {
 		font-size: 16px;
 		border-radius: 62px;
 		padding: 15px 45px;
-		box-shadow: 0 10px 40px rgba(0, 67, 224, 0);
+		box-shadow: 0 10px 40px rgba($btn, 0);
 		min-width: 210px;
 		text-align: center;
 
@@ -189,7 +225,7 @@ section {
 		&:focus {
 			background-color: $btn;
 			color: $white;
-			box-shadow: 0 10px 40px rgba(0, 67, 224, 0.3);
+			box-shadow: 0 10px 40px rgba($btn, 0.3);
 		}
 	}
 
@@ -200,7 +236,7 @@ section {
 		border: 1px solid $btn;
 		border-radius: 62px;
 		padding: 15px 45px;
-		box-shadow: 0 10px 40px rgba(0, 67, 224, 0.3);
+		box-shadow: 0 10px 40px rgba($btn, 0.3);
 		min-width: 210px;
 		text-align: center;
 
@@ -208,8 +244,31 @@ section {
 		&:focus {
 			background-color: transparent;
 			color: $btn;
-			box-shadow: 0 10px 40px rgba(0, 67, 224, 0);
+			box-shadow: 0 10px 40px rgba($btn, 0);
 		}
+	}
+
+	&--background-white {
+		background-color: $white;
+		font-size: 16px;
+		color: $btn;
+		border: 1px solid $white;
+		border-radius: 62px;
+		padding: 15px 45px;
+		min-width: 210px;
+		text-align: center;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			color: $white;
+		}
+	}
+
+	&--white-border {
+		color: $white;
+		border-color: $white;
+		background-color: transparent;
 	}
 }
 
@@ -250,7 +309,6 @@ section {
 		margin: 15px 0;
 	}
 }
-
 
 @include media-breakpoint-down(sm) {
 	.title {
@@ -355,6 +413,7 @@ section {
 
 @include media-breakpoint-down(sm) {
 	.header {
+		padding: 15px 0;
 
 		&__nav {
 			display: none;
@@ -369,11 +428,6 @@ section {
 		display: block;
 		position: relative;
 		outline: none;
-
-		object{
-			pointer-events: none;
-			outline: none;
-		}
 	}
 }
 
@@ -453,6 +507,402 @@ section {
 
 		&__button {
 			display: block;
+		}
+	}
+}
+
+.arrows {
+
+	&__arrow {
+		width: 40px;
+		height: 40px;
+		border: 1px solid #0043E0;
+		border-radius: 5px;
+		background-color: transparent;
+		outline: none;
+		cursor: pointer;
+		position: relative;
+		transition: .3s;
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&--next {
+			background-color: $btn;
+			box-shadow: 0 10px 40px rgba($btn, 0.3);
+			margin-left: 20px;
+
+			&:hover,
+			&:focus {
+			}
+		}
+	}
+}
+
+.offer {
+	overflow: hidden;
+
+	&__wrapper {
+		width: 80%;
+		margin-left: 20%;
+		position: relative;
+		color: $white;
+		padding: 35px 40px;
+		border-radius: 15px 0 0 15px;
+		margin-top: 40px;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: -40px;
+			left: -160px;
+			width: 275px;
+			height: 140px;
+			background-image: url("/img/icons/template-bg.svg");
+			z-index: -2;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 100vw;
+			z-index: -1;
+			background-color: $btn;
+			border-radius: inherit;
+			animation: backgroundAnimation 1s infinite alternate both ;
+		}
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 28px;
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+
+	&__text {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	&__links {
+		margin-top: 40px;
+	}
+}
+
+@keyframes backgroundAnimation {
+	0% {
+		box-shadow: 0 10px 40px rgba($btn, 0);
+	}
+	100% {
+		   box-shadow: 0 10px 60px rgba($btn, 0.6);
+   	}
+}
+
+@include media-breakpoint-down(sm) {
+	.offer {
+
+		&__wrapper {
+
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.offer {
+
+		&__wrapper {
+			margin-top: 0;
+			margin-left: 0;
+			width: 100%;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.offer {
+
+		&__wrapper {
+			padding: 25px 15px;
+			border-radius: 15px;
+		}
+
+		&__title {
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+
+		&__links {
+			margin-top: 20px;
+		}
+	}
+}
+
+.call {
+	text-decoration: underline;
+	color: $btn;
+}
+
+.accordion {
+
+	&__item {
+		color: $text;
+		margin-bottom: 25px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		&--open {
+
+			.accordion {
+
+				&__info {
+					background-color: $btn;
+					box-shadow: 0 10px 40px rgba($btn, 0.3);
+					color: $white;
+
+					&:before {
+						background-color: $white;
+					}
+
+					line {
+						stroke: $white;
+					}
+
+					svg {
+						transform: rotate(45deg);
+					}
+				}
+
+				&__content {
+					max-height: 100%;
+				}
+			}
+		}
+	}
+
+	&__info {
+		border: 1px solid $btn;
+		border-radius: 15px;
+		padding: 20px 20px 20px 45px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		transition: .3s;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: $btn;
+			border-radius: 50%;
+			width: 5px;
+			height: 5px;
+			transition: inherit;
+		}
+
+		svg,
+		line {
+			transition: inherit;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 21px;
+	}
+
+	&__content {
+		max-height: 0;
+		transition: .3s;
+		overflow: hidden;
+	}
+
+	&__inner {
+		margin: 40px 25px 15px 25px;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.accordion {
+
+		&__info {
+			padding: 15px 20px 15px 35px;
+		}
+
+		&__item {
+			margin-bottom: 20px;
+		}
+
+		&__inner {
+			margin: 30px 10px 10px 10px;
+		}
+	}
+}
+
+.tabs {
+
+	&__nav {
+		margin-bottom: 50px;
+	}
+
+	&__list {
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__elem {
+		list-style-type: none;
+		margin: 0 10px;
+	}
+
+	&__button {
+		border-radius: 10px;
+		background-color: $white;
+		color: $btn;
+		border: 1px solid $btn;
+		font-size: 16px;
+		padding: 15px 45px;
+		box-shadow: 0 10px 40px rgba($btn, 0);
+		min-width: 210px;
+		text-align: center;
+		cursor: pointer;
+		transition: .3s;
+		outline: none;
+
+		&:hover {
+			background-color: $dark;
+			color: $white;
+			border-color: $dark;
+			box-shadow: 0 10px 40px rgba($dark, 0.3);
+		}
+
+		&:focus {
+			background-color: $btn;
+			color: $white;
+			border-color: $btn;
+			box-shadow: 0 10px 40px rgba($btn, 0.3);
+		}
+
+		&--open {
+			background-color: $btn;
+			color: $white;
+			border: 1px solid $btn;
+			box-shadow: 0 10px 40px rgba($btn, 0.3);
+		}
+	}
+
+	&__item {
+		display: none;
+
+		&--open {
+			display: block;
+		}
+	}
+}
+
+.package {
+	background-color: $white;
+	color: $text;
+	text-align: center;
+	border-radius: 15px;
+	border: 1px solid $btn;
+	padding: 25px 25px 35px 25px;
+
+	&--blue {
+		background-color: $btn;
+		color: rgba($white, .8);
+
+		.package {
+
+			&__name {
+
+				h6 {
+					color: $white;
+				}
+			}
+
+			&__price {
+
+				div {
+					color: $white;
+				}
+			}
+
+			&__links {
+
+				a.link {}
+			}
+		}
+	}
+
+	&__name {
+		margin-bottom: 25px;
+
+		span {
+			font-size: 14px;
+			line-height: 16px;
+		}
+
+		h6 {
+			font-size: 24px;
+			line-height: 28px;
+			font-weight: bold;
+			color: $btn;
+			margin: 5px 0 0 0;
+			padding: 0;
+		}
+	}
+
+	&__conditions {
+		margin-bottom: 35px;
+	}
+
+	&__elem {
+		display: block;
+		margin: 7px 0;
+	}
+
+	&__price {
+		margin-bottom: 30px;
+
+		span {
+			font-size: 14px;
+			line-height: 16px;
+		}
+
+		div {
+			font-size: 24px;
+			line-height: 28px;
+			color: $btn;
+			font-weight: bold;
 		}
 	}
 }
